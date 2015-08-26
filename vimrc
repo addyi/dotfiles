@@ -19,30 +19,27 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" Let vundle manage itself:
-Bundle 'gmarik/vundle'
-
 " Just a shitload of color schemes.
 " https://github.com/flazz/vim-colorschemes#current-colorschemes
-Bundle 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'
 
 " NERDTree
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 " Fuzzy finder -- absolutely must have.
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
 " Support for easily toggling comments.
-Bundle 'tpope/vim-commentary'
+Plugin 'tpope/vim-commentary'
 
 " Vim-Airline
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 
 " Markdown plugin
-Bundle 'tpope/vim-markdown'
+Plugin 'tpope/vim-markdown'
 
 " highlight trailing whitespace characters (spaces and tabs)
-Bundle 'ntpeters/vim-better-whitespace'
+Plugin 'ntpeters/vim-better-whitespace'
 " :StripWhitespace
 
 " All of your Plugins must be added before the following line
