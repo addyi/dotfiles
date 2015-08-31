@@ -75,14 +75,14 @@ set showcmd			" show commands
 
 " ========== Formatting ==========
 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-" set expandtab		" use spaces instead of tabs.
-set smarttab
 set shiftround
 set autoindent
-set smartindent
+set noexpandtab
+" Set the tab width
+let s:tabwidth=4
+au filetype * let &l:tabstop = s:tabwidth
+au filetype * let &l:shiftwidth = s:tabwidth
+au filetype * let &l:softtabstop = s:tabwidth
 
 
 " ========== Appearance ==========
