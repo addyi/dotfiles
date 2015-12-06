@@ -8,8 +8,7 @@ use_color=true
 
 # ========== ALIASES AND FUNCTIONS ==========
 
-alias update='sudo apt-get update; sudo apt-get upgrade -y;'
-alias ping='ping -c 5 8.8.8.8'
+alias p='ping -c 5 8.8.8.8'
 alias c='clear'
 
 # Directorys
@@ -23,10 +22,10 @@ alias gits='git status'
 # The 'ls' family
 
 # Add colors for filetype and  human-readable sizes by default on 'ls':
-alias ls='ls -h --color'
+alias ls='ls -hG'
 
 # The ubiquitous 'll': directories first, with alphanumeric sorting:
-alias ll="ls -lAv --group-directories-first"
+alias ll="ls -lAv"
 alias lll='ll | less'		#  Pipe through 'less'
 alias tree='tree -Csuh'		#  Nice alternative to 'recursive ls'
 
@@ -45,10 +44,10 @@ alias ua='unalias'
 if ${use_color} ; then # true if bash uses color
 	if [[ ${EUID} == 0 ]] ; then # isRoot
 		# root
-		PS1="\n\[\e[1;30m\]\d - \A\n\[\e[1;31m\]\u@\h\[\e[1;34m\] \w\[\e[1;33m\] \`parse_git_branch\`\n\[\e[1;31m\] \$\[\e[0m\] "
+		PS1="\n\[\e[1;37m\]\d - \A\n\[\e[1;31m\]\u@\h\[\e[1;34m\] \w\[\e[1;33m\] \`parse_git_branch\`\n\[\e[1;31m\] \$\[\e[0m\] "
 	else
 		# user
-		PS1="\n\[\e[1;30m\]\d - \A\n\[\e[1;32m\]\u@\h\[\e[1;34m\] \w\[\e[1;33m\] \`parse_git_branch\`\n\[\e[1;32m\] \$\[\e[0m\] "
+		PS1="\n\[\e[1;37m\]\d - \A\n\[\e[1;32m\]\u@\h\[\e[1;34m\] \w\[\e[1;33m\] \`parse_git_branch\`\n\[\e[1;32m\] \$\[\e[0m\] "
 		#PS1="\n\e[1;32m\u@\h\e[1;30m \d - \A\n\e[1;34m \w \e[1;33m\`parse_git_branch\`\n \e[1;32m\$\e[0m "
 		#PS1="\n\e[1;32m\u@\h\e[1;34m \w \n\e[0;32m \d - \A\e[0;33m \`parse_git_branch\`\n \e[1;32m\$\e[0m "
 	fi
