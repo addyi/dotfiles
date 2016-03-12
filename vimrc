@@ -90,9 +90,10 @@ au filetype * let &l:softtabstop = s:tabwidth
 syntax on										" syntax highlighting
 set guifont=Source\ Code\ Pro\ Medium\ 12		" set font
 set cursorline									" highlight current line
-set background=dark
 set t_Co=256									" 256 colors in terminal
 colorscheme molokai								" set colorscheme
+hi Normal ctermbg=NONE							" set background transparent
+" set background=dark
 
 set number 										" line number
 set relativenumber								" relative line number
@@ -104,8 +105,8 @@ set laststatus=2 								" show vim-airline
 
 " highlight the 80th column
 highlight ColorColumn ctermbg=235 guibg=#2c2d27	" define color of colorcolumn
-let &colorcolumn="81,".join(range(120,500),",")	" define colorculumn numbers
-
+" let &colorcolumn="81,".join(range(120,500),",")	" define colorculumn numbers
+let &colorcolumn="81"								" define colorculumn numbers
 
 " ========== Mappings ==========
 
