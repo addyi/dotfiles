@@ -1,0 +1,9 @@
+- fzf
+- nvim <- set as default EDITOR
+- fd
+- tree
+- most
+- git <- set up defult config
+- zsh
+- python3
+- oh-my-zsh: Additional notes: https://github.com/ohmyzsh/ohmyzsh#unattended-install

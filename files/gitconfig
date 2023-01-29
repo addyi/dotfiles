@@ -1,0 +1,10 @@
+[user]
+	name = Adrian Renner
+	email = adrian.renner@klarna.com
+[core]
+	editor = nvim
+	autocrlf = input
+	pager = most
+[pager]
+	branch = false
+	log = true
