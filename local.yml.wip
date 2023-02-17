@@ -1,0 +1,47 @@
+---
+- hosts: localhost
+  connection: local
+  tags: always
+  become: true
+  tasks:
+    - name: pre-run | update package cache (arch)
+      tags: always
+      pacman: update_cache=yes
+      changed_when: False
+      when: ansible_distribution == "Archlinux"
+
+    - name: pre-run | update package cache (debian, etc)
+      tags: always
+      apt: update_cache=yes
+      changed_when: False
+      when: ansible_distribution in ["Debian", "Ubuntu"]
+
+  # update package manager brew update
+
+
+- hosts: localhost
+  connection: local
+  vars:
+    # This variable gives us a boolean if brew is the used package manager.
+    # The variable cascades down to any subsequent tasks unless overwritten.
+    should_be_root: "{{ true if ansible_pkg_mgr != 'brew' else false }}"
+    # This variable checkes if OS is MacOS
+    # is_mac_os: "{{ False if ansible_os_family == 'Darwin' else True }}"
+
+
+  tasks:
+    - block:
+      - name: install packages
+        package:
+          name:
+            - git
+            - zsh
+            - nvim
+            - python3
+            - fzf
+            - fd
+            - tree
+            - most
+            - htop
+            - tmux
+      become: "{{ should_be_root }}"
