@@ -9,7 +9,7 @@ zstyle ':omz:update' frequency 7 # Update frequency in days
 zstyle ':omz:update' mode auto # update automatically without asking
 
 ### OMZ CONFIGURATION
-ENABLE_CORRECTION="true" # command auto-correction
+# ENABLE_CORRECTION="true" # command auto-correction
 
 ### PLUGINS
 
@@ -19,7 +19,7 @@ zstyle :omz:plugins:ssh-agent lazy yes
 
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-prompt ssh-agent fzf fd gradle adb aliases archlinux)
+plugins=(git git-prompt ssh-agent fzf fd gradle adb aliases archlinux zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
