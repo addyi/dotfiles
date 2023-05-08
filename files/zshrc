@@ -26,6 +26,12 @@ source $ZSH/oh-my-zsh.sh
 ### USER CONFIGURATION
 export EDITOR="nvim"
 
+# source sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+
 ### ALIASES
 alias python="python3"
 alias vim="nvim"
@@ -41,3 +47,4 @@ alias aliases="acs" # aliases omz plugin
 alias a="acs" # aliases omz plugin
 
 alias yolo='git commit -m "$(curl -s https://whatthecommit.com/index.txt)"'
+
