@@ -34,6 +34,7 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 ### ALIASES
 alias python="python3"
+alias pip="pip3"
 alias vim="nvim"
 
 alias less="most"
@@ -43,8 +44,9 @@ alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
 alias omz="vim ~/.zshrc"
 
-alias aliases="acs" # aliases omz plugin
-alias a="acs" # aliases omz plugin
+alias aliases="als" # aliases omz plugin
+alias a="als" # aliases omz plugin
+alias afind="alias | fzf"
 
 alias yolo='git commit -m "$(curl -s https://whatthecommit.com/index.txt)"'
 

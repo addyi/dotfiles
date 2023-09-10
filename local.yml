@@ -4,6 +4,7 @@
   connection: local
   vars:
     homebrew_install_packages:
+      - git
       - fzf
       - fd
       - tree
@@ -24,7 +25,7 @@
       register: homebrew_check
       ignore_errors: yes
 
-    - name: Fail if Homebrew is not installed
+    - name: Check if Homebrew is installed
       fail:
         msg: "Homebrew is not installed. Please install Homebrew."
       when: homebrew_check.rc != 0
