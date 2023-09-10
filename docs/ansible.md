@@ -28,6 +28,7 @@ achieving a consistent and automated setup process, regardless of how many times
     ```shell
     ansible-pull -U https://github.com/addyi/dotfiles
     ```
+   **Note:** The repository needs to have a `master` branch for this to work.
 
 ## Testing Ansible Playbooks Locally
 
