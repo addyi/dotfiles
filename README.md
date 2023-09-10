@@ -33,10 +33,10 @@ top-notch, personalized system setups. Welcome aboard!
 
 Set up ansible script with following tasks:
 
-1. Install tools e.g. nvim, zsh, fzf, ...
+- [ ] Install tools e.g. nvim, zsh, fzf, ...
     - Mac (homebrew)
     - Linux (arch, maybe debian)
-2. Set up oh-my-zsh including plugins
+- [x] Set up oh-my-zsh including plugins
     - [Custom theme](files/addyi.zsh-theme)
     - External plugins to install
         - zsh-autosuggestions
@@ -44,7 +44,7 @@ Set up ansible script with following tasks:
     - Maybe it makes sense to create a custom oh-my-zsh repo with all the plugins and themes preinstalled
         - Questions are how to keep it up to date and how to install it
         - <https://github.com/ohmyzsh/ohmyzsh#unattended-install>
-3. Create `~/dev` folder and check out dotfile repo into it
-4. Copy or symlink dotfiles to correct locations
-5. Create ssh key (or document how to create it)
-6. Install [SDKMAN](docs/sdkman.md)
+- [ ] Create `~/dev` folder and check out dotfile repo into it
+- [ ] Copy or symlink dotfiles to correct locations
+- [ ] Create ssh key (or document how to create it)
+- [ ] Install [SDKMAN](docs/sdkman.md)

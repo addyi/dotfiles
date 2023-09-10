@@ -3,6 +3,10 @@
   gather_facts: yes
   connection: local
   vars:
+    is_mac_os: "{{ ansible_os_family == 'Darwin' }}"
+    is_debian_linux: "{{ ansible_os_family == 'Debian' }}"
+    is_arch_linux: "{{ ansible_os_family == 'Archlinux' }}"
+    is_windows: "{{ ansible_os_family == 'Windows' }}"
     homebrew_install_packages:
       - git
       - fzf
@@ -15,23 +19,22 @@
       - python3
 
   tasks:
-    - name: Check system is MacOS
-      fail:
-        msg: "This playbook can only be run on MacOS."
-      when: ansible_os_family != "Darwin"
 
-    - name: Check if Homebrew is installed
-      command: which brew
-      register: homebrew_check
-      ignore_errors: yes
+    - name: Run if system is macOS
+      include_tasks: tasks/macos.yml
+      when: is_mac_os
 
-    - name: Check if Homebrew is installed
-      fail:
-        msg: "Homebrew is not installed. Please install Homebrew."
-      when: homebrew_check.rc != 0
+    - name: Run if system is Debian Linux
+      include_tasks: tasks/debian.yml
+      when: is_debian_linux
 
-    - name: Install packages
-      homebrew:
-        name: "{{ item }}"
-        state: present
-      with_items: "{{ homebrew_install_packages }}"
+    - name: Run if system is Arch Linux
+      include_tasks: tasks/arch.yml
+      when: is_arch_linux
+
+    - name: Run if system is Windows
+      include_tasks: tasks/windows.yml
+      when: is_windows
+
+    - name: Set up zshrc and oh-my-zsh
+      include_tasks: tasks/zsh.yml

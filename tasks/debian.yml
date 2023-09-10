@@ -1,0 +1,6 @@
+---
+
+- name: Check system belongs to Debian Linux family
+  debug:
+    msg: "Debian Linux not yet fully supported!"
+  when: ansible_os_family == 'Debian'
