@@ -1,0 +1,36 @@
+---
+- hosts: localhost
+  gather_facts: yes
+  connection: local
+  vars:
+    homebrew_install_packages:
+      - fzf
+      - fd
+      - tree
+      - nvim
+      - most
+      - htop
+      - tmux
+      - python3
+
+  tasks:
+    - name: Check system is MacOS
+      fail:
+        msg: "This playbook can only be run on MacOS."
+      when: ansible_os_family != "Darwin"
+
+    - name: Check if Homebrew is installed
+      command: which brew
+      register: homebrew_check
+      ignore_errors: yes
+
+    - name: Fail if Homebrew is not installed
+      fail:
+        msg: "Homebrew is not installed. Please install Homebrew."
+      when: homebrew_check.rc != 0
+
+    - name: Install packages
+      homebrew:
+        name: "{{ item }}"
+        state: present
+      with_items: "{{ homebrew_install_packages }}"
