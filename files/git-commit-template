@@ -1,0 +1,88 @@
+Subject: Summarize in less than 50 characters
+
+Because:
+- Explain the reasons you made this change
+- Make a new bullet for each reason
+- Each line should be under 72 characters
+
+# Explain exactly what was done in this commit with more depth than the
+# 50 character subject line. Remember to wrap at 72 characters!
+
+# WHY is this change happening, e.g. goals, issues, use cases, stories, etc.?
+
+
+# WHAT has changed, e.g. behavior, algorithms, etc.?
+
+
+# TAGS suitable for searching, such as hashtags, keywords, etc.
+
+
+# SEE links to relevant web pages, issue trackers, blog articles, etc.
+# See: https://example.com/
+
+
+# ## HELP ##
+#
+# Subject line imperative uppercase verbs:
+#
+#   Add = Create a capability e.g. feature, test, dependency.
+#   Drop = Delete a capability e.g. feature, test, dependency.
+#   Fix = Fix an issue e.g. bug, typo, accident, misstatement.
+#   Bump = Increase the version of something e.g. a dependency.
+#   Make = Change the build process, or tools, or infrastructure.
+#   Start = Begin doing something; e.g. enable a toggle, feature flag, etc.
+#   Stop = End doing something; e.g. disable a toggle, feature flag, etc.
+#   Optimize = A change that MUST be just about performance, e.g. speed up code.
+#   Document = A change that MUST be only in the documentation, e.g. help files.
+#   Refactor = A change that MUST be just refactoring.
+#   Reformat = A change that MUST be just format, e.g. indent line, trim space, etc.
+#   Rephrase = A change that MUST be just textual, e.g. edit a comment, doc, etc.
+#
+#
+# ## THE SEVEN RULES OF A GRATE COMMIT MESSAGE ##
+#
+#   -  Separate subject from body with a blank line
+#   -  Limit the subject line to 50 characters
+#   -  Capitalize the subject line
+#   -  Do not end the subject line with a period
+#   -  Use the imperative mood in the subject line
+#   -  Wrap the body at 72 characters
+#   -  Use the body to explain what and why vs. how
+#
+#   -> https://chris.beams.io/posts/git-commit/
+#
+#
+# ## Additional resources ##
+#
+#   -  https://chris.beams.io/posts/git-commit/
+#   -  https://dev.to/jacobherrington/how-to-write-useful-commit-messages-my-commit-message-template-20n9
+#
+#
+# ## USAGE ##
+#
+# Put the template file here:
+#
+#     ~/.git_commit_template
+#
+# Configure git to use the template file by running:
+#
+#     git config --global commit.template ~/.git_commit_template
+#
+# Add the template file to the ~/.gitconfig file:
+#
+#     [commit]
+#       template = ~/.git_commit_template
+#
+# If you prefer other file locations or ways of working,
+# you can freely adjust the usage as you like.
+#
+# Usage with Intellij/AS:
+# - https://plugins.jetbrains.com/plugin/9364-commit-message-template
+#
+#
+# ## CREDIT ##
+#
+# This template is based on these nice resources by Joel Parker Henderson and Jacob Herrington:
+#
+# - https://github.com/joelparkerhenderson/git_commit_template
+# - https://dev.to/jacobherrington/how-to-write-useful-commit-messages-my-commit-message-template-20n9
