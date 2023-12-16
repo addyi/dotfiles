@@ -40,8 +40,16 @@ alias vim="nvim"
 alias less="most"
 alias more="most"
 
+alias l="exa -la --git --header --group-directories-first"
+alias ll="exa -la --git --header --group-directories-first"
+alias tree="exa --tree --level=2 --git --header --group-directories-first"
+
+alias cat="bat --paging=never"
+
+alias gbv="git branch -vv"
+
 alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vimrc"
+alias vimconfig="vim ~/.config/nvim/init.vim"
 alias omz="vim ~/.zshrc"
 
 alias aliases="als" # aliases omz plugin

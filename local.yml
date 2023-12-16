@@ -11,12 +11,14 @@
       - git
       - fzf
       - fd
-      - tree
       - nvim
       - most
       - htop
       - tmux
       - python3
+      - exa
+      - micro
+      # - alacritty
 
   tasks:
 
@@ -38,3 +40,6 @@
 
     - name: Set up zshrc and oh-my-zsh
       include_tasks: tasks/zsh.yml
+
+    - name: Set up config files
+      include_tasks: tasks/config-files.yml

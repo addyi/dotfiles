@@ -1,0 +1,35 @@
+---
+
+- name: Copy git config to .config directory
+  copy:
+    src: "files/config/git/config"
+    dest: "~/.config/git/config"
+    backup: true
+  when: git_check.rc == 0
+
+- name: Copy git commit template to .config directory
+  copy:
+    src: "files/config/git/git-commit-template"
+    dest: "~/.config/git/git-commit-template"
+  when: git_check.rc == 0
+
+- name: Copy init.vim to .config directory
+  copy:
+    src: "files/config/nvim/init.vim"
+    dest: "~/.config/nvim/init.vim"
+    backup: true
+  when: git_check.rc == 0
+
+- name: Copy ssh config
+  copy:
+    src: "files/config/ssh/config"
+    dest: "~/.ssh/config"
+    backup: true
+  when: git_check.rc == 0
+
+- name: Copy tmux config
+  copy:
+    src: "files/config/tmux/tmux.conf"
+    dest: "~/.config/tmux/tmux.conf"
+    backup: true
+  when: git_check.rc == 0

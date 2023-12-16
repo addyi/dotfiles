@@ -1,6 +1,6 @@
 [user]
 	name = Adrian Renner
-	email = adrian.renner@klarna.com
+	email = addyi@users.noreply.github.com
 [core]
 	editor = nvim
 	autocrlf = input
@@ -9,4 +9,4 @@
 	branch = false
 	log = true
 [commit]
-	template = /Users/adrian.renner/.config/git/git-commit-template
+	template = ~/.config/git/git-commit-template

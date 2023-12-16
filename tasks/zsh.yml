@@ -31,13 +31,13 @@
 
 - name: Copy my oh-my-zsh theme to the custom themes directory
   copy:
-    src: "files/addyi.zsh-theme"
+    src: "files/config/zsh/addyi.zsh-theme"
     dest: "~/.oh-my-zsh/custom/themes/addyi.zsh-theme"
   when: git_check.rc == 0
 
 - name: Copy my zshrc to the home directory
   copy:
-    src: "files/zshrc"
+    src: "files/config/zsh/zshrc"
     dest: "~/.zshrc"
     backup: true
   when: git_check.rc == 0
