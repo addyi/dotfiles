@@ -16,9 +16,12 @@
       - htop
       - tmux
       - python3
-      - exa
+      # - TODO exa replace with eza
       - micro
-      # - alacritty
+      # - TODO alacritty
+      # - TODO https://www.nerdfonts.com/
+      # - TODO chrome
+      # - TODO firefox
 
   tasks:
 
