@@ -1,5 +1,10 @@
 ---
 
+- name: Ensure .config/git directory exists
+  file:
+    path: "~/.config/git"
+    state: directory
+
 - name: Copy git config to .config directory
   copy:
     src: "files/config/git/config"
@@ -13,12 +18,22 @@
     dest: "~/.config/git/git-commit-template"
   when: git_check.rc == 0
 
+- name: Ensure .config/nvim directory exists
+  file:
+    path: "~/.config/nvim"
+    state: directory
+
 - name: Copy init.vim to .config directory
   copy:
     src: "files/config/nvim/init.vim"
     dest: "~/.config/nvim/init.vim"
     backup: true
   when: git_check.rc == 0
+
+- name: Ensure .ssh directory exists
+  file:
+    path: "~/.ssh"
+    state: directory
 
 - name: Copy ssh config
   copy:
@@ -27,12 +42,22 @@
     backup: true
   when: git_check.rc == 0
 
+- name: Ensure .config/tmux directory exists
+  file:
+    path: "~/.config/tmux"
+    state: directory
+
 - name: Copy tmux config
   copy:
     src: "files/config/tmux/tmux.conf"
     dest: "~/.config/tmux/tmux.conf"
     backup: true
   when: git_check.rc == 0
+
+- name: Ensure .config/alacritty directory exists
+  file:
+    path: "~/.config/alacritty"
+    state: directory
 
 - name: Copy alacritty config
   copy:
