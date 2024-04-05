@@ -21,3 +21,4 @@
     upgrade_all: true
   with_items: "{{ homebrew_install_packages }}"
   when: homebrew_check.rc == 0
+  ignore_errors: true
