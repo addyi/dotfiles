@@ -16,7 +16,7 @@
       - htop
       - tmux
       - python3
-      # - TODO exa replace with eza
+      - eza
       - micro
       # - TODO alacritty
       # - TODO https://www.nerdfonts.com/

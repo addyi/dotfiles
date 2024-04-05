@@ -40,9 +40,9 @@ alias vim="nvim"
 alias less="most"
 alias more="most"
 
-alias l="exa -la --git --header --group-directories-first"
-alias ll="exa -la --git --header --group-directories-first"
-alias tree="exa --tree --level=2 --git --header --group-directories-first"
+alias l="eza -la --git --header --group-directories-first"
+alias ll="eza -la --git --header --group-directories-first"
+alias tree="eza --tree --level=2 --git --header --group-directories-first"
 
 alias cat="bat --paging=never"
 
