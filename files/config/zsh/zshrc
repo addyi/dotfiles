@@ -58,3 +58,4 @@ alias afind="alias | fzf"
 
 alias yolo='git commit -m "$(curl -s https://whatthecommit.com/index.txt)"'
 
+alias o='open .'
