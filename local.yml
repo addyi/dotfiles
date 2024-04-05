@@ -17,6 +17,7 @@
       - tmux
       - python3
       - eza
+      - bat
       - micro
       # - TODO alacritty
       # - TODO https://www.nerdfonts.com/
