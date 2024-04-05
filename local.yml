@@ -19,7 +19,9 @@
       - eza
       - bat
       - micro
-      # - TODO alacritty
+      - alacritty
+      - rectangle
+      - jetbrains-toolbox
       # - TODO https://www.nerdfonts.com/
       # - TODO chrome
       # - TODO firefox
