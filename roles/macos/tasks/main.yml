@@ -5,20 +5,5 @@
     msg: "These tasks can only be run on macOS!"
   when: ansible_os_family != "Darwin"
 
-- name: Check Homebrew is installed
-  command: which brew
-  register: homebrew_check
-  failed_when:
-    - homebrew_check.rc != 0
-  ignore_errors: false
-  changed_when: false # Don't mark this as a change
-
-- name: Update, upgrade & install packages with Homebrew
-  homebrew:
-    name: "{{ item }}"
-    state: present
-    update_homebrew: true
-    upgrade_all: true
-  with_items: "{{ homebrew_install_packages }}"
-  when: homebrew_check.rc == 0
-  ignore_errors: true
+- name: Install dependencies via Homebrew
+  include_tasks: homebrew.yml

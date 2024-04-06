@@ -1,3 +1,6 @@
+homebrew_taps:
+  - homebrew/cask-fonts # https://www.nerdfonts.com/
+
 homebrew_install_packages:
   - git
   - fzf
@@ -15,4 +18,3 @@ homebrew_install_packages:
   - jetbrains-toolbox
   - firefox
   # - TODO google-chrome
-  # - TODO https://www.nerdfonts.com/

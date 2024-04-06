@@ -1,0 +1,43 @@
+- name: Check Homebrew is installed
+  command: which brew
+  register: homebrew_check
+  failed_when:
+    - homebrew_check.rc != 0
+  ignore_errors: false
+  changed_when: false # Don't mark this as a change
+
+- name: Tap additional Homebrew repositories
+  homebrew_tap:
+    name: "{{ item }}"
+  with_items: "{{ homebrew_taps }}"
+  when: homebrew_check.rc == 0
+  ignore_errors: true
+
+- name: Update, upgrade Homebrew packages
+  homebrew:
+    update_homebrew: true
+    upgrade_all: true
+  when: homebrew_check.rc == 0
+  ignore_errors: true
+
+- name: Install packages with Homebrew
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_install_packages }}"
+  when: homebrew_check.rc == 0
+  ignore_errors: true
+
+- name: Search for nerd fonts using brew
+  shell: brew search '/font-.*-nerd-font/'
+  register: brew_nerd_font_search_output
+  when: homebrew_check.rc == 0
+  changed_when: false
+
+- name: Install found nerd fonts
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ brew_nerd_font_search_output.stdout_lines }}"
+  when: homebrew_check.rc == 0
+  ignore_errors: true
