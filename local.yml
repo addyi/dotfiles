@@ -1,50 +1,8 @@
----
 - hosts: localhost
-  gather_facts: yes
-  connection: local
-  vars:
-    is_mac_os: "{{ ansible_os_family == 'Darwin' }}"
-    is_debian_linux: "{{ ansible_os_family == 'Debian' }}"
-    is_arch_linux: "{{ ansible_os_family == 'Archlinux' }}"
-    is_windows: "{{ ansible_os_family == 'Windows' }}"
-    homebrew_install_packages:
-      - git
-      - fzf
-      - fd
-      - nvim
-      - most
-      - htop
-      - tmux
-      - python3
-      - eza
-      - bat
-      - micro
-      - alacritty
-      - rectangle
-      - jetbrains-toolbox
-      # - TODO https://www.nerdfonts.com/
-      # - TODO chrome
-      # - TODO firefox
+  roles:
+    - role: base
 
-  tasks:
-
-    - name: Run if system is macOS
-      include_tasks: tasks/os/macos.yml
-      when: is_mac_os
-
-    - name: Run if system is Debian Linux
-      include_tasks: tasks/os/debian.yml
-      when: is_debian_linux
-
-    - name: Run if system is Arch Linux
-      include_tasks: tasks/os/arch.yml
-      when: is_arch_linux
-
-    - name: Set up zshrc and oh-my-zsh
-      include_tasks: tasks/config/zsh.yml
-
-    - name: Set up config files
-      include_tasks: tasks/config/config-files.yml
-
-    - name: Set up "~/dev" directory
-      include_tasks: tasks/config/dev-directory.yml
+- hosts: localhost
+  roles:
+    - role: macos
+      when: ansible_os_family == 'Darwin'

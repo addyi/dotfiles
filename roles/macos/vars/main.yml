@@ -1,0 +1,18 @@
+homebrew_install_packages:
+  - git
+  - fzf
+  - fd
+  - nvim
+  - tmux
+  - most
+  - bat
+  - eza
+  - htop
+  - btop
+  - python3
+  - alacritty
+  - rectangle
+  - jetbrains-toolbox
+  - firefox
+  # - TODO google-chrome
+  # - TODO https://www.nerdfonts.com/

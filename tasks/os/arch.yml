@@ -1,6 +1,0 @@
----
-
-- name: Check system belongs to Arch Linux family
-  debug:
-    msg: "Arch Linux not yet fully supported!"
-  when: ansible_os_family == 'Archlinux'

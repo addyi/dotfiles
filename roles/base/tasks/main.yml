@@ -1,0 +1,8 @@
+- name: Set up zshrc and oh-my-zsh
+  include_tasks: roles/base/tasks/zsh.yml
+
+- name: Set up config files
+  include_tasks: roles/base/tasks/config-files.yml
+
+- name: Set up "~/dev" directory
+  include_tasks: roles/base/tasks/dev-directory.yml
