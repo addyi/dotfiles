@@ -1,6 +1,0 @@
----
-
-- name: Check system is Windows
-  debug:
-    msg: "Windows? Really? Not supported!"
-  when: ansible_os_family == 'Windows'

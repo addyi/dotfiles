@@ -29,23 +29,19 @@
   tasks:
 
     - name: Run if system is macOS
-      include_tasks: tasks/macos.yml
+      include_tasks: tasks/os/macos.yml
       when: is_mac_os
 
     - name: Run if system is Debian Linux
-      include_tasks: tasks/debian.yml
+      include_tasks: tasks/os/debian.yml
       when: is_debian_linux
 
     - name: Run if system is Arch Linux
-      include_tasks: tasks/arch.yml
+      include_tasks: tasks/os/arch.yml
       when: is_arch_linux
 
-    - name: Run if system is Windows
-      include_tasks: tasks/windows.yml
-      when: is_windows
-
     - name: Set up zshrc and oh-my-zsh
-      include_tasks: tasks/zsh.yml
+      include_tasks: tasks/config/zsh.yml
 
     - name: Set up config files
-      include_tasks: tasks/config-files.yml
+      include_tasks: tasks/config/config-files.yml
