@@ -4,7 +4,7 @@
 
 SDKMAN! is a software development toolkit manager, a version manager similar to `nvm` for Node.js environments,
 and `rbenv` for Ruby environments. This tool allows developers to manage parallel versions of different Software
-Development Kits on most Unix-based systems (such as Linux, Mac OS, and Cygwin). It supports multiple versions and types
+Development Kits on most Unix-based systems (such as Linux, macOS, and Cygwin). It supports multiple versions and types
 of SDKs, including Groovy, Scala, Gradle, Java, and of course, KOTLIN :hearts:.
 
 ## Installation

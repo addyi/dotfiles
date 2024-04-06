@@ -37,7 +37,7 @@ Set up ansible script with following tasks:
     - [x] Mac (homebrew)
     - [ ] Linux (arch, maybe debian)
 - [x] Set up oh-my-zsh including plugins
-    - [Custom theme](files/addyi.zsh-theme)
+    - [Custom theme](files/config/zsh/addyi.zsh-theme)
     - External plugins to install
         - zsh-autosuggestions
         - zsh-syntax-highlighting
