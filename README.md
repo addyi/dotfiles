@@ -44,7 +44,7 @@ Set up ansible script with following tasks:
     - Maybe it makes sense to create a custom oh-my-zsh repo with all the plugins and themes preinstalled
         - Questions are how to keep it up to date and how to install it
         - <https://github.com/ohmyzsh/ohmyzsh#unattended-install>
-- [ ] Create `~/dev` folder and check out dotfile repo into it
+- [x] Create `~/dev` folder and clone dotfile repository
 - [x] Copy or symlink dotfiles to correct locations
 - [ ] Create ssh key (or document how to create it)
 - [ ] Install [SDKMAN](docs/sdkman.md)

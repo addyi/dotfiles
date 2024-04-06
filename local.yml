@@ -45,3 +45,6 @@
 
     - name: Set up config files
       include_tasks: tasks/config/config-files.yml
+
+    - name: Set up "~/dev" directory
+      include_tasks: tasks/config/dev-directory.yml

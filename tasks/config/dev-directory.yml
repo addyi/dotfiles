@@ -1,0 +1,12 @@
+---
+
+- name: Ensure ~/dev directory exists
+  file:
+    path: "~/dev"
+    state: directory
+
+- name: Clone dotfiles repository
+  git:
+    repo: "https://github.com/addyi/dotfiles.git"
+    dest: "~/dev/dotfiles"
+    update: no
