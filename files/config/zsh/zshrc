@@ -19,7 +19,7 @@ zstyle :omz:plugins:ssh-agent lazy yes
 
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-prompt ssh-agent fzf fd gradle adb aliases archlinux zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git git-prompt ssh-agent fzf gradle aliases archlinux zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
