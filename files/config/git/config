@@ -8,7 +8,5 @@
 [pager]
 	branch = false
 	log = true
-[commit]
-	template = ~/.config/git/git-commit-template
 [rerere]
     enabled = true

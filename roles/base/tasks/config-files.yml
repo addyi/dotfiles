@@ -12,12 +12,6 @@
     backup: true
   when: git_check.rc == 0
 
-- name: Copy git commit template to .config directory
-  copy:
-    src: "files/config/git/git-commit-template"
-    dest: "~/.config/git/git-commit-template"
-  when: git_check.rc == 0
-
 - name: Ensure .config/nvim directory exists
   file:
     path: "~/.config/nvim"
