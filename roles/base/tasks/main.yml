@@ -2,6 +2,9 @@
 - name: Set up zshrc and oh-my-zsh
   ansible.builtin.include_tasks: zsh.yml
 
+- name: Set up SSH configuration and keys
+  ansible.builtin.include_tasks: ssh.yml
+
 - name: Set up config files
   ansible.builtin.include_tasks: config-files.yml
 

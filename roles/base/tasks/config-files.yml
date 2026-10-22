@@ -28,17 +28,6 @@
     dest: "~/.config/nvim/init.vim"
     backup: true
 
-- name: Ensure .ssh directory exists
-  ansible.builtin.file:
-    path: "~/.ssh"
-    state: directory
-
-- name: Copy ssh config
-  ansible.builtin.copy:
-    src: "files/config/ssh/config"
-    dest: "~/.ssh/config"
-    backup: true
-
 - name: Ensure .config/tmux directory exists
   ansible.builtin.file:
     path: "~/.config/tmux"

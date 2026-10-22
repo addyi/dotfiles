@@ -64,5 +64,5 @@ Set up ansible script with following tasks:
         - <https://github.com/ohmyzsh/ohmyzsh#unattended-install>
 - [x] Create `~/dev` folder and clone dotfile repository
 - [x] Copy or symlink dotfiles to correct locations
-- [ ] Create ssh key (or document how to create it)
+- [x] Create ssh key (or document how to create it)
 - [x] Install [SDKMAN](docs/sdkman.md)
