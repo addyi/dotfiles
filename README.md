@@ -29,13 +29,31 @@ top-notch, personalized system setups. Welcome aboard!
 2. Install ansible via brew: `brew install ansible`
 3. Run `ansible-pull -U https://github.com/addyi/dotfiles`
 
+## Install on Linux
+
+> **Info**: see [docs/ansible.md](docs/ansible.md) for details
+
+### Arch Linux
+1. Install Ansible and Git: `sudo pacman -Syu ansible git`
+2. Run `ansible-pull -U https://github.com/addyi/dotfiles -K`
+
+### Fedora / RedHat
+1. Install Ansible and Git: `sudo dnf install -y ansible git`
+2. Run `ansible-pull -U https://github.com/addyi/dotfiles -K`
+
+### Debian / Ubuntu
+1. Install Ansible and Git: `sudo apt update && sudo apt install -y ansible git`
+2. Run `ansible-pull -U https://github.com/addyi/dotfiles -K`
+
+> **Note:** `-K` (`--ask-become-pass`) prompts for your `sudo` password to install system packages and update the default login shell.
+
 ## TODOs
 
 Set up ansible script with following tasks:
 
-- [ ] Install tools e.g. nvim, zsh, fzf, ...
+- [x] Install tools e.g. nvim, zsh, fzf, ...
     - [x] Mac (homebrew)
-    - [ ] Linux (arch, maybe debian)
+    - [x] Linux (Arch, Fedora, Debian/Ubuntu)
 - [x] Set up oh-my-zsh including plugins
     - [Custom theme](files/config/zsh/addyi.zsh-theme)
     - External plugins to install

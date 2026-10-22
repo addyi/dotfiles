@@ -22,6 +22,7 @@
   ansible.builtin.user:
     name: "{{ ansible_facts['user_id'] }}"
     shell: "{{ zsh_check.stdout }}"
+  become: "{{ ansible_facts['system'] == 'Linux' }}"
   when:
     - zsh_check.rc == 0
     - ansible_facts['user_shell'] is not defined or (ansible_facts['user_shell'] | basename != 'zsh')

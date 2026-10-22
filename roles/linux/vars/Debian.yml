@@ -1,0 +1,21 @@
+---
+linux_packages:
+  - git
+  - zsh
+  - git-delta
+  - fzf
+  - fd-find
+  - neovim
+  - micro
+  - tmux
+  - most
+  - bat
+  - eza
+  - htop
+  - btop
+
+linux_symlinks:
+  - src: "/usr/bin/batcat"
+    dest: "~/.local/bin/bat"
+  - src: "/usr/bin/fdfind"
+    dest: "~/.local/bin/fd"

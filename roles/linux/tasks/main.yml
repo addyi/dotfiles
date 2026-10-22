@@ -1,0 +1,22 @@
+---
+- name: Verify OS is Linux
+  ansible.builtin.assert:
+    that:
+      - ansible_facts['system'] == 'Linux'
+      - ansible_facts['os_family'] in ['Archlinux', 'RedHat', 'Debian']
+    fail_msg: "Unsupported Linux distribution family: {{ ansible_facts['os_family'] | default('unknown') }}"
+
+- name: Include OS-specific variables
+  ansible.builtin.include_vars: "{{ ansible_facts['os_family'] }}.yml"
+
+- name: Install packages for Arch Linux
+  ansible.builtin.include_tasks: pacman.yml
+  when: ansible_facts['os_family'] == 'Archlinux'
+
+- name: Install packages for RedHat/Fedora
+  ansible.builtin.include_tasks: dnf.yml
+  when: ansible_facts['os_family'] == 'RedHat'
+
+- name: Install packages for Debian/Ubuntu
+  ansible.builtin.include_tasks: apt.yml
+  when: ansible_facts['os_family'] == 'Debian'

@@ -2,7 +2,7 @@
 
 # Reimplements OMZ's work_in_progress to customize the echo
 function work_in_progress() {
-  if $(git log -n 1 2>/dev/null | grep -q -c "\-\-wip\-\-"); then
+  if git log -n 1 2>/dev/null | grep -q -- "--wip--"; then
     echo "[WIP!!] "
   fi
 }

@@ -30,6 +30,33 @@ achieving a consistent and automated setup process, regardless of how many times
     ```
    **Note:** The repository needs to have a `master` branch for this to work.
 
+## Running on Linux
+
+### Prerequisites & Ansible Installation
+
+- **Arch Linux**:
+  ```shell
+  sudo pacman -Syu ansible git
+  ```
+
+- **Fedora / RedHat**:
+  ```shell
+  sudo dnf install -y ansible git
+  ```
+
+- **Debian / Ubuntu**:
+  ```shell
+  sudo apt update && sudo apt install -y ansible git
+  ```
+
+### Provisioning with Ansible-Pull
+
+Run `ansible-pull` with `-K` (or `--ask-become-pass`) so Ansible can execute package management tasks with `sudo`:
+
+```shell
+ansible-pull -U https://github.com/addyi/dotfiles -K
+```
+
 ## Testing Ansible Playbooks Locally
 
 Before you push your Ansible playbook to a source control system like GitHub, you should test it locally to ensure it's
@@ -39,13 +66,16 @@ functioning as expected.
 > is therefore crucial to review your playbook carefully before executing it to avoid any unexpected changes on your
 > system. For example, it might install certain packages or modify system settings.
 
-**Prerequisites**: Ensure that you have Ansible installed on your machine. This testing procedure assumes you're using a
-macOS.
+**Prerequisites**: Ensure that you have Ansible installed on your machine.
 
-Run the playbook locally using the following command:
+Run the playbook locally using the following command (add `-K` on Linux for sudo password prompt):
 
 ```shell
-ansible-playbook your_playbook.yml
+ansible-playbook local.yml
+```
+or with sudo escalation:
+```shell
+ansible-playbook local.yml -K
 ```
 
 ## Resources

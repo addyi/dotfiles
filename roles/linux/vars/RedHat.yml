@@ -1,0 +1,15 @@
+---
+linux_packages:
+  - git
+  - zsh
+  - git-delta
+  - fzf
+  - fd-find
+  - neovim
+  - micro
+  - tmux
+  - most
+  - bat
+  - eza
+  - htop
+  - btop

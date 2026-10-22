@@ -56,7 +56,11 @@ if [[ -z "$JAVA_HOME" && -d "$SDKMAN_DIR/candidates/java/current" ]]; then
 fi
 
 # Android SDK
-export ANDROID_HOME="$HOME/Library/Android/sdk"
+if [[ -d "$HOME/Library/Android/sdk" ]]; then
+  export ANDROID_HOME="$HOME/Library/Android/sdk"
+elif [[ -d "$HOME/Android/Sdk" ]]; then
+  export ANDROID_HOME="$HOME/Android/Sdk"
+fi
 
 # Consolidate extra PATHs (using $HOME instead of hardcoded user directories)
 typeset -U path PATH  # Ensures PATH contains no duplicate entries in Zsh
@@ -75,6 +79,10 @@ if command -v fd >/dev/null 2>&1; then
   export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --exclude .git'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --exclude .git'
+elif command -v fdfind >/dev/null 2>&1; then
+  export FZF_DEFAULT_COMMAND='fdfind --type f --strip-cwd-prefix --hidden --exclude .git'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND='fdfind --type d --strip-cwd-prefix --hidden --exclude .git'
 fi
 
 ### ALIASES
@@ -92,7 +100,11 @@ alias l="eza -la --git --header --group-directories-first"
 alias ll="eza -la --git --header --group-directories-first"
 alias tree="eza --tree --level=2 --git --header --group-directories-first"
 
-alias cat="bat --paging=never"
+if command -v bat >/dev/null 2>&1; then
+  alias cat="bat --paging=never"
+elif command -v batcat >/dev/null 2>&1; then
+  alias cat="batcat --paging=never"
+fi
 
 alias gbv="git branch -vv"
 
