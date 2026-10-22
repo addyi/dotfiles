@@ -9,36 +9,61 @@
   changed_when: false # Don't mark this as a change
   check_mode: false
 
+- name: Check zsh is installed
+  ansible.builtin.command: which zsh
+  register: zsh_check
+  failed_when:
+    - zsh_check.rc != 0
+  ignore_errors: false
+  changed_when: false # Don't mark this as a change
+  check_mode: false
+
+- name: Set default shell to zsh
+  ansible.builtin.user:
+    name: "{{ ansible_facts['user_id'] }}"
+    shell: "{{ zsh_check.stdout }}"
+  when:
+    - zsh_check.rc == 0
+    - ansible_facts['user_shell'] is not defined or (ansible_facts['user_shell'] | basename != 'zsh')
+
 - name: Clone oh-my-zsh
   ansible.builtin.git:
     repo: "https://github.com/ohmyzsh/ohmyzsh.git"
     dest: "~/.oh-my-zsh"
     update: true
-  when: git_check.rc == 0
+  when:
+    - git_check.rc == 0
+    - zsh_check.rc == 0
 
 - name: Clone zsh-autosuggestions
   ansible.builtin.git:
     repo: "https://github.com/zsh-users/zsh-autosuggestions.git"
     dest: "~/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
     update: true
-  when: git_check.rc == 0
+  when:
+    - git_check.rc == 0
+    - zsh_check.rc == 0
 
 - name: Clone zsh-syntax-highlighting
   ansible.builtin.git:
     repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
     dest: "~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
     update: true
-  when: git_check.rc == 0
+  when:
+    - git_check.rc == 0
+    - zsh_check.rc == 0
 
 - name: Copy my oh-my-zsh theme to the custom themes directory
   ansible.builtin.copy:
     src: "files/config/zsh/addyi.zsh-theme"
     dest: "~/.oh-my-zsh/custom/themes/addyi.zsh-theme"
-  when: git_check.rc == 0
+  when:
+    - git_check.rc == 0
+    - zsh_check.rc == 0
 
 - name: Copy my zshrc to the home directory
   ansible.builtin.copy:
     src: "files/config/zsh/zshrc"
     dest: "~/.zshrc"
     backup: true
-  when: git_check.rc == 0
+  when: zsh_check.rc == 0
