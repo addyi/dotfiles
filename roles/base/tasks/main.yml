@@ -1,4 +1,7 @@
 ---
+- name: Set up Git configuration
+  ansible.builtin.include_tasks: git.yml
+
 - name: Set up zshrc and oh-my-zsh
   ansible.builtin.include_tasks: zsh.yml
 
@@ -8,8 +11,14 @@
 - name: Set up tmux and TPM
   ansible.builtin.include_tasks: tmux.yml
 
-- name: Set up config files
-  ansible.builtin.include_tasks: config-files.yml
+- name: Set up Neovim configuration
+  ansible.builtin.include_tasks: nvim.yml
+
+- name: Set up Ghostty configuration
+  ansible.builtin.include_tasks: ghostty.yml
+
+- name: Set up Micro configuration
+  ansible.builtin.include_tasks: micro.yml
 
 - name: Set up "~/dev" directory
   ansible.builtin.include_tasks: dev-directory.yml

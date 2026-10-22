@@ -1,0 +1,11 @@
+---
+- name: Ensure .config/micro directory exists
+  ansible.builtin.file:
+    path: "~/.config/micro"
+    state: directory
+
+- name: Copy micro settings
+  ansible.builtin.copy:
+    src: "files/config/micro/settings.json"
+    dest: "~/.config/micro/settings.json"
+    backup: true

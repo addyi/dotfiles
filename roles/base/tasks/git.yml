@@ -1,0 +1,17 @@
+---
+- name: Ensure .config/git directory exists
+  ansible.builtin.file:
+    path: "~/.config/git"
+    state: directory
+
+- name: Copy git config to .config directory
+  ansible.builtin.copy:
+    src: "files/config/git/config"
+    dest: "~/.config/git/config"
+    backup: true
+
+- name: Copy global gitignore to .config directory
+  ansible.builtin.copy:
+    src: "files/config/git/ignore"
+    dest: "~/.config/git/ignore"
+    backup: true

@@ -1,0 +1,11 @@
+---
+- name: Ensure .config/nvim directory exists
+  ansible.builtin.file:
+    path: "~/.config/nvim"
+    state: directory
+
+- name: Copy init.vim to .config directory
+  ansible.builtin.copy:
+    src: "files/config/nvim/init.vim"
+    dest: "~/.config/nvim/init.vim"
+    backup: true

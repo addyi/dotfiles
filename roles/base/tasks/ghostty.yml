@@ -1,0 +1,11 @@
+---
+- name: Ensure .config/ghostty directory exists
+  ansible.builtin.file:
+    path: "~/.config/ghostty"
+    state: directory
+
+- name: Copy ghostty config
+  ansible.builtin.copy:
+    src: "files/config/ghostty/config"
+    dest: "~/.config/ghostty/config"
+    backup: true
