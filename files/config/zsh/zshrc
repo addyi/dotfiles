@@ -86,6 +86,7 @@ alias less="most"
 alias more="most"
 
 alias nano="micro"
+alias htop="btop"
 
 alias l="eza -la --git --header --group-directories-first"
 alias ll="eza -la --git --header --group-directories-first"
