@@ -6,7 +6,7 @@ elif [[ -f "/usr/local/bin/brew" ]]; then
 fi
 
 ### OH-MY-ZSH CONFIGURATION
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.config/zsh/oh-my-zsh"
 ZSH_THEME="addyi"
 # Update
 zstyle ':omz:update' frequency 7 # Update frequency in days
@@ -32,6 +32,7 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST # move caches to sensible directory
 source $ZSH/oh-my-zsh.sh
 
 ### HISTORY CONFIGURATION

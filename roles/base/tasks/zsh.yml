@@ -27,10 +27,15 @@
     - zsh_check.rc == 0
     - ansible_facts['user_shell'] is not defined or (ansible_facts['user_shell'] | basename != 'zsh')
 
+- name: Ensure .config/zsh directory exists
+  ansible.builtin.file:
+    path: "~/.config/zsh"
+    state: directory
+
 - name: Clone oh-my-zsh
   ansible.builtin.git:
     repo: "https://github.com/ohmyzsh/ohmyzsh.git"
-    dest: "~/.oh-my-zsh"
+    dest: "~/.config/zsh/oh-my-zsh"
     update: true
   when:
     - git_check.rc == 0
@@ -39,7 +44,7 @@
 - name: Clone zsh-autosuggestions
   ansible.builtin.git:
     repo: "https://github.com/zsh-users/zsh-autosuggestions.git"
-    dest: "~/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+    dest: "~/.config/zsh/oh-my-zsh/custom/plugins/zsh-autosuggestions"
     update: true
   when:
     - git_check.rc == 0
@@ -48,7 +53,7 @@
 - name: Clone zsh-syntax-highlighting
   ansible.builtin.git:
     repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
-    dest: "~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+    dest: "~/.config/zsh/oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
     update: true
   when:
     - git_check.rc == 0
@@ -57,7 +62,7 @@
 - name: Copy my oh-my-zsh theme to the custom themes directory
   ansible.builtin.copy:
     src: "files/config/zsh/addyi.zsh-theme"
-    dest: "~/.oh-my-zsh/custom/themes/addyi.zsh-theme"
+    dest: "~/.config/zsh/oh-my-zsh/custom/themes/addyi.zsh-theme"
   when:
     - git_check.rc == 0
     - zsh_check.rc == 0
