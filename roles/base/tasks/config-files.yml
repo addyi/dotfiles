@@ -28,23 +28,6 @@
     dest: "~/.config/nvim/init.vim"
     backup: true
 
-- name: Ensure .config/tmux directory exists
-  ansible.builtin.file:
-    path: "~/.config/tmux"
-    state: directory
-
-- name: Copy tmux config
-  ansible.builtin.copy:
-    src: "files/config/tmux/tmux.conf"
-    dest: "~/.config/tmux/tmux.conf"
-    backup: true
-
-- name: Ensure Tmux Plugin Manager (TPM) is installed
-  ansible.builtin.git:
-    repo: "https://github.com/tmux-plugins/tpm"
-    dest: "~/.tmux/plugins/tpm"
-    update: true
-
 - name: Ensure .config/ghostty directory exists
   ansible.builtin.file:
     path: "~/.config/ghostty"

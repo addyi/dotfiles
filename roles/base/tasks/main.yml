@@ -5,6 +5,9 @@
 - name: Set up SSH configuration and keys
   ansible.builtin.include_tasks: ssh.yml
 
+- name: Set up tmux and TPM
+  ansible.builtin.include_tasks: tmux.yml
+
 - name: Set up config files
   ansible.builtin.include_tasks: config-files.yml
 
